@@ -6,7 +6,7 @@ import { Guests } from "./guests";
 import { Activities } from "./activities";
 import { Button } from "../../components/button";
 import { format } from "date-fns";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
 
 interface Trip {
@@ -29,6 +29,10 @@ export function TripDetailsPage() {
         setCreateActivityModalOpen(false);
     }
 
+    function changeDate(){
+        navigate('/');
+    }
+
     const { tripId } = useParams();
 
     useEffect(() => {
@@ -36,6 +40,9 @@ export function TripDetailsPage() {
     }, [tripId]);
 
     const displayedDate = trip?format(trip.starts_at, "d' de 'LLL").concat(' até ').concat(format(trip.ends_at, "d 'de' LLL")) : null;
+
+    const navigate = useNavigate();
+
 
     return (
         <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">
@@ -52,7 +59,7 @@ export function TripDetailsPage() {
 
                         <div className="w-px h-6 bg-zinc-800" />
 
-                        <Button variant="secondary">
+                        <Button onClick={changeDate} variant="secondary">
                             Alterar local/data
                             <Settings2 className="size-5" />
                         </Button>
