@@ -1,8 +1,24 @@
 # Plann.er
 The project is a desktop website to create travel plans with friends, record activities and useful links.
 
-## Configuração
+## Settings
+1. Create a .env file
+2. Copy the contents of the `.env.example` file to the created `.env` file.
 
-1. Copie o arquivo `.env.example` para o arquivo criado `.env`:
-   ```sh
-   cp .env.example .env
+## Features
+- Create a trip by informing the destination, date and guests.
+- Register activity on a specific day of the trip.
+- Register travel-related links.
+- Manage guests.
+
+## Technologies Used
+- TypeScript
+- React.js
+- Tailwind CSS
+- Node.js
+- Prisma
+- Vite
+- SQLite
+
+
+
